@@ -26,14 +26,16 @@ function predict(){
     if(leave<=0){
         document.getElementById('input7').innerText=cur_percent;
     }
-    
     for (var i =0; exact_percent<deadline ;i++){
             tot_hrs += tot_hrs_per_day;
             tot_hrs_attend += tot_hrs_per_day;
             exact_percent= (tot_hrs_attend/tot_hrs)*100;
-            if(exact_percent>=deadline){
+    }
+    if(exact_percent>=deadline){
                 document.getElementById('input8').innerText=i;
-            }
+    }
+    else{
+        document.getElementById('input8').innerText="0";
     }
     if(exact_percent>deadline){
         document.getElementById('input9').innerText="You Are Safe. Congrats And Keep Going";
